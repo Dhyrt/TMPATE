@@ -1,0 +1,22 @@
+html{
+    font-family: 'Lato', sans-serif;
+}
+
+.bg-azul{
+    background-color: #236192;
+}
+
+.logo{
+    width: 290px;
+}
+
+.avatar{
+    background-color: #fff;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+}
+
+.nav-bar{
+    border-bottom: 1px solid #000;
+}

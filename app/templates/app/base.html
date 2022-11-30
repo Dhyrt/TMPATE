@@ -10,19 +10,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
-    {% block nombre %}
-    {% endblock %}
-    <!-- font-family: 'Lato', sans-serif; -->
+    <link rel="icon" href="{% static 'app/img/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'app/css/estilo.css' %}">
+    <title>{% block nombre %}{% endblock %}</title>
 </head>
-<body>
-    <div class="header">
-        
-    </div>
+<body class="min-vh-100">
+    <header>
+        <div class="py-3 bg-azul">
+            <div class="container-fluid d-grid gap-5 align-items-center" style="grid-template-columns: 10fr 1fr;">
+                <div class="align-items-center">
+                    <a href="{% url 'index' %}"><img src="{% static 'app/img/logo2.png' %} " class="logo"></a>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="d-flex justify-content-center avatar">
+                    <img src="{% static 'app/img/usuario.png' %}">
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="nav-bar">
+        <div class="container">
+            <p>a</p>
+            <div class="input-group">
+                <input type="text" class="form-control barsize" placeholder="Búsqueda">
+            </div>
+        </div>
+    </nav>
     <div class="container">
         {% block contenido %}
         {% endblock %}
     </div>
-    
+    <footer class="bd-footer mt-auto py-3 bg-dark text-white text-center">
+        <h6>Derechos reservados Tonari no Planta ©</h6>
+    </footer>
 </body>
 </html>
