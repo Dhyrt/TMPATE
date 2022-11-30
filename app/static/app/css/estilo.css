@@ -13,10 +13,23 @@ html{
 .avatar{
     background-color: #fff;
     border-radius: 50%;
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
 }
 
 .nav-bar{
     border-bottom: 1px solid #000;
+}
+
+.nav-item a{
+    color: #000;
+    font-size: 18px;
+}
+
+.barsize{
+    height: 45px;
+}
+
+.input-group-prepend img{
+    width: 30px;
 }

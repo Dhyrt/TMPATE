@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{% static 'app/css/estilo.css' %}">
     <title>{% block nombre %}{% endblock %}</title>
 </head>
-<body class="min-vh-100">
+<body class="d-flex flex-column min-vh-100">
     <header>
         <div class="py-3 bg-azul">
             <div class="container-fluid d-grid gap-5 align-items-center" style="grid-template-columns: 10fr 1fr;">
@@ -29,10 +29,20 @@
         </div>
     </header>
     <nav class="nav-bar">
-        <div class="container">
-            <p>a</p>
-            <div class="input-group">
-                <input type="text" class="form-control barsize" placeholder="Búsqueda">
+        <div class="container-fluid">
+            <div class="row d-flex flex-wrap p-2">
+               <ul class="nav col-md-6">
+                    <li class="nav-item"><a class="nav-link" href="">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Talleres</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Inicio sesión</a></li>
+                </ul>
+                <div class="col-md-6 input-group w-50">
+                    <input type="search" class="form-control barsize" placeholder="Búsqueda">
+                    <div class="input-group-prepend me-5">
+                        <button type="submit" class="btn"><img src="{% static 'app/img/buscar.png' %}" alt=""></button>
+                    </div>
+                </div> 
             </div>
         </div>
     </nav>
