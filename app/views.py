@@ -22,3 +22,9 @@ def detalleT(request):
 
 def evaluar(request):
     return render(request, 'app/evaluar.html')
+
+def detallePost(request):
+    return render(request, 'app/detallePost.html')
+
+def inscripcion(request):
+    return render(request, 'app/inscripcion.html')
