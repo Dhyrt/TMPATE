@@ -28,3 +28,6 @@ def detallePost(request):
 
 def inscripcion(request):
     return render(request, 'app/inscripcion.html')
+
+def registroT(request):
+    return render(request, 'app/registroT.html')

@@ -1,0 +1,59 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block nombre %}
+Registro Taller
+{% endblock %}
+
+{% block contenido %}
+<div class="container mt-4 mb-5">
+    <div class="mt-4 mb-3 text-center">
+      <h4>Registrar Taller</h4>
+    </div>
+    <div class="body px-5">
+      <div class="container px-5">
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="inputNombreT" class="form-label">Nombre Taller</label>
+            <input type="text" class="form-control" id="inputNombreT">
+          </div>
+          <div class="col-md-6">
+            <label for="inputNombreI" class="form-label">Nombre instructor</label>
+            <input type="text" class="form-control" id="inputNombreI">
+          </div>
+          <div class="col-md-6">
+            <label for="inputValorI" class="form-label">Valor Inscripcion</label>
+            <input type="number" class="form-control" id="inputValorI">
+          </div>
+          <div class="col-md-6">
+            <label for="inputDuracion" class="form-label">Días Impartidos</label>
+            <input type="text" class="form-control" id="inputDuracion" placeholder="Ej: Lunes, Miercoles, Domingo">
+          </div>
+          <div class="col-md-6">
+            <label for="inputDiaInicio" class="form-label">Fecha Inicio</label>
+            <input type="date" class="form-control" id="inputDiaInicio" placeholder="Fecha Inicio:">
+          </div>
+          <div class="col-md-6">
+            <label for="inputDiaFinal" class="form-label">Fecha Final</label>
+            <input type="date" class="form-control" id="inputDiaFinal" placeholder="Fecha Final:">
+          </div>
+          <div class="col-md-6">
+            <label for="inputSala" class="form-label">Sala Asignada</label>
+            <input type="text" class="form-control" id="inputSala">
+          </div>
+          <div class="col-md-6">
+            <label for="inputCupos" class="form-label">Cupos disponibles</label>
+            <input type="number" class="form-control" id="inputCupos">
+          </div>
+          <div class="col-12">
+            <label for="inputDescripcion" class="form-label">Descripcion del Taller</label>
+            <textarea rows="6" cols="10" class="form-control" id="inputDescripcion"></textarea>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+{% endblock %}
