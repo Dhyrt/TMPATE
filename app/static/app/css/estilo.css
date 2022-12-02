@@ -62,7 +62,7 @@ html{
     height: 50vh;
     z-index: -1;
     background-color: black;
-    opacity: .5;
+    opacity: .7;
     content: '';
 }
 
