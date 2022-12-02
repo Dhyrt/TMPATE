@@ -6,5 +6,24 @@ Inscribirse
 {% endblock %}
 
 {% block contenido %}
+<div class="container mt-5">
+    <form class="row g-3">
+        <div class="col-md-6">
+          <label for="inputNombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="inputNombre">
+        </div>
+        <div class="col-md-6">
+          <label for="inputApellido" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="inputApellido">
+        </div>
+        <div class="col-12">
+          <label for="inputNombreTaller" class="form-label">Nombre Taller</label>
+          <input type="text" class="form-control" id="inputNombreTaller" placeholder="Nombre Taller">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Inscribirme</button>
+        </div>
+      </form>
+</div>
 
 {% endblock %}
