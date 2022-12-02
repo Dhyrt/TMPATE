@@ -7,19 +7,20 @@ html{
 }
 
 .logo{
-    width: 290px;
+    width: 250px;
+    height: 70px;
 }
 
 .avatar{
     background-color: #fff;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
 }
 
 .nav-bar{
     border-bottom: 1px solid #000;
-    background-color: #e40d0d;
+    background-color: #f5f2f8;
 }
 
 .nav-item a{
@@ -71,6 +72,7 @@ html{
     padding-left: 3rem;
     justify-content: left;
     text-align: left;
+    margin-top: 3rem;
 }
 
 .imgInst{
@@ -78,4 +80,121 @@ html{
     height: 300px;
     border-radius: 50%;
     margin-left: 0px;
+}
+
+.instructor-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.borde{
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.infoP{
+    margin-top: 3rem;
+}
+.infoF{
+    margin-top: 3rem;
+}
+.extraButn{
+    margin-top: 3rem;
+}
+
+.card-form{
+    background: linear-gradient(#ffd6a0b7, #b2acffb0);
+}
+
+@media(max-width:700px){
+    .logo{
+        width: 170px;
+        height: 40px;
+    }
+    .nav-item a{ 
+        font-size: 15px;
+        padding-left: auto;
+        margin: 0px;
+    }
+    .avatar{ 
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: white;
+    }
+    .input-group{
+        align-self: right;
+    }
+    .input-group-prepend button{
+        width: 25px;
+        padding: 0px;
+        margin: 0px;
+    }
+    .input-group-prepend button img{
+        width: 25px;
+    }
+    .barsize{
+        height: 30px;
+        font-size: 14px;
+    }
+    .form-check label{
+        margin-right: 6px;
+        font-size: 16px;
+    }
+    .respButton{
+        margin: 0px 5px 2rem 5px;
+    }
+    .divIns{
+        margin-top: 10px;
+        margin-left: 0px;
+        padding-left: 0px;
+        text-align: center;
+    }
+    .divIns img{
+        width: 100px;
+        height: 100px;
+        margin-top: 0px !important;
+        padding-top: 0px;
+    }
+    .respText{
+        color: #000;
+    }
+    .banner{
+        min-height: 18vh;
+    }
+    .banner .banner-img{
+        height: 18vh
+    }
+    .banner .banner-img::after{
+        height: 30vh;
+    }
+    .infoT h2{
+        font-size: 23px;
+    }
+    .infoT h4{
+        font-size: 20px;
+    }
+    .calT{
+        color: #000;
+    }
+    .instructor-img{
+        width: 100px;
+        height: 100px;
+    }
+    .infoP{
+        margin-top: 16px;
+    }
+    .infoP h4{
+        font-size: 18px;
+    }
+    .infoP h5{
+        font-size: 16px;
+    }
+    .infoF{
+        margin-top: 2px;
+    }
+    .extraButn{
+        margin: 8px 5px 2rem 5px;
+    }
 }

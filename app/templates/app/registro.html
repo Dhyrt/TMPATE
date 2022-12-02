@@ -6,16 +6,94 @@ Registro
 {% endblock %}
 
 {% block contenido %}
-<div class="container-fluid mt-3 mb-3">
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-sm-8 px-6">
-        <form action="" method="POST">
-            
-          <input type="" value="Registrar" class="btn btn-success float-right">
+<div class="container mt-4 mb-5">
+    <div class="mt-4 mb-3 text-center">
+      <h4>Registrar Usuario</h4>
+    </div>
+    <div class="body px-5">
+      <div class="container px-5">
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="inputNombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="inputNombre">
+          </div>
+          <div class="col-md-6">
+            <label for="inputApellido" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="inputApellido">
+          </div>
+          <div class="col-md-6">
+            <label for="inputRut" class="form-label">Rut</label>
+            <input type="text" class="form-control" id="inputRut">
+          </div>
+          <div class="col-md-6">
+            <label for="inputFNac" class="form-label">Fecha de nacimiento</label>
+            <input type="date" class="form-control" id="inputFNac" placeholder="Fecha Inicio:">
+          </div>
+          <div class="col-md-6">
+            <label for="inputGen" class="form-label">Género</label>
+            <input type="text" class="form-control" id="inputGen">
+          </div>
+          <div class="col-md-6">
+            <label for="inputCorreo" class="form-label">Correo</label>
+            <input type="text" class="form-control" id="inputCorreo">
+          </div>
+          <div class="col-md-6">
+            <label for="inputCorreo" class="form-label">Número de teléfono</label>
+            <input type="text" class="form-control" id="inputCorreo">
+          </div>
+          <div class="col-md-6">
+            <label for="inputNombreTaller" class="form-label">Nombre del Taller</label>
+            <input type="text" class="form-control" id="inputNombreTaller">
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label>¿Sufre de alguna discapacidad?</label>
+            </div>
+            <div class="d-flex">
+              <div class="form-check me-auto">
+                <input class="form-check-input" type="radio" name="RadioDisc" id="flexRadioDefault1" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  No discapacitado
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="RadioDisc" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Discapacitado
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label>Tipo de Usuario</label>
+            </div>
+            <div class="d-flex">
+              <div class="form-check me-auto">
+                <input class="form-check-input" type="radio" name="RadioTUser" id="flexRadioDefault3" checked>
+                <label class="form-check-label" for="flexRadioDefault3">
+                  Adulto mayor
+                </label>
+              </div>
+              <div class="form-check me-auto">
+                <input class="form-check-input" type="radio" name="RadioTUser" id="flexRadioDefault4">
+                <label class="form-check-label" for="flexRadioDefault4">
+                  Instructor
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="RadioTUser" id="flexRadioDefault5">
+                <label class="form-check-label" for="flexRadioDefault5">
+                  Administrador
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+          </div>
         </form>
       </div>
-    </div>
   </div>
 </div>
 {% endblock %}
