@@ -1,0 +1,81 @@
+html{
+    font-family: 'Lato', sans-serif;
+}
+
+.bg-azul{
+    background-color: #236192;
+}
+
+.logo{
+    width: 290px;
+}
+
+.avatar{
+    background-color: #fff;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.nav-bar{
+    border-bottom: 1px solid #000;
+    background-color: #fff;
+}
+
+.nav-item a{
+    color: #000;
+    font-size: 18px;
+}
+
+.barsize{
+    height: 45px;
+}
+
+.input-group-prepend img{
+    width: 30px;
+}
+
+.banner{
+    position: relative;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    min-height: 50vh;
+}
+
+.banner .banner-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    z-index: -1;
+    background-image: url(../img/banner2.jpg);
+    background-size: cover;
+}
+
+.banner .banner-img::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    z-index: -1;
+    background-color: black;
+    opacity: .5;
+    content: '';
+}
+
+.divIns{
+    margin-left: 0px;
+    padding-left: 3rem;
+    justify-content: left;
+    text-align: left;
+}
+
+.imgInst{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-left: 0px;
+}
