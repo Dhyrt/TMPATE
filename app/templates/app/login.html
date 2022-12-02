@@ -6,5 +6,52 @@ Iniciar sesión
 {% endblock %}
 
 {% block contenido %}
+<style>
+    body {
+        background: #6ecc7d;
+        background: linear-gradient(to right,#2d6997, #899abe);
+    }
 
+    .bg {
+        background-image: url(../../static/app/img/inicio-sesion.jpg);
+        background-position: center center;
+    }
+</style>
+<div class="container mb-3 mt-3"></div>
+<div class="container w-75 bg-primary mt-5 rounded shadow">
+    <div class="row align-items-stretch">
+        <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
+
+        </div>
+            <div class="col bg-white w-100">
+                <h2 class="fw-bold text-center py-5">Bienvenido</h2>
+
+                <form action="#">
+                    <div class="mb-4">
+                        <label for="email" class="form-label">Correo electronico</label>
+                        <input type="email" class="form-control" name="email">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">password</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                    <div class="mb-4 form-check">
+                        <input type="checkbox" name="connected" class="form-check-input">
+                        <label for="connected" class="form-check-label">Mantener Conectado</label>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                    </div>
+
+                    <div class="my-3">
+                        <span>No tienes Cuenta? <a href="#">Regístrate</a></span> <br>
+                        <span><a href="#">Recuperar password</a></span>
+                    </div>
+                </form>
+
+            </div>
+
+    </div>
+</div>
 {% endblock %}
