@@ -6,5 +6,36 @@ Postular
 {% endblock %}
 
 {% block contenido %}
+<div class="container mt-5">
+    <form class="row g-3">
+        <div class="col-md-6">
+          <label for="inputNombreTaller" class="form-label">Nombre del Taller</label>
+          <input type="text" class="form-control" id="inputNombreTaller">
+        </div>
+        <div class="col-md-6">
+          <label for="inputDuracion" class="form-label">Duracion del Taller</label>
+          <input type="text" class="form-control" id="inputDuracion">
+        </div>
+        <div class="col-12">
+          <label for="inputDiaInicio" class="form-label">Fecha Inicio</label>
+          <input type="date" class="form-control" id="inputDiaInicio" placeholder="Fecha Inicio:">
+        </div>
+        <div class="col-12">
+          <label for="inputDiaFinal" class="form-label">Fecha Final</label>
+          <input type="date" class="form-control" id="inputDiaFinal" placeholder="Fecha Final:">
+        </div>
+        <div class="col-md-6">
+          <label for="inputDescripcion" class="form-label">Descripcion del Taller</label>
+          <input type="text" class="form-control" id="inputDescripcion">
+        </div>
+        <div class="col-md-6">
+            <label for="inputDocumento" class="form-label">Inserte Certificado</label>
+            <input type="file" class="form-control" id="inputDocumento">
+          </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Postularme</button>
+        </div>
+      </form>
+</div>
 
 {% endblock %}
