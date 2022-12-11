@@ -34,8 +34,13 @@
                <ul class="nav col-md-6">
                     <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'talleres' %}">Talleres</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registro</a></li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">cerrar sesion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">@{{ user.username }}</a></li>
+                    {% else %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Inicio sesión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registrate</a></li>
+                    {% endif %}
                 </ul>
                 <div class="col-md-6 input-group w-50">
                     <input type="search" class="form-control barsize" placeholder="Búsqueda">
