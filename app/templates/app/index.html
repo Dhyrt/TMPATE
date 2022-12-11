@@ -38,36 +38,39 @@ Inicio
     </button>
   </div>
 </div>
+<div class="container text-center mt-5">
+  <h1>Los talleres de este momento</h1>
+</div>
 <div class="container">
   <div class="row mb-5">
     <div class=" col-md-4 mx-10 my-3 d-flex justify-content-center">
-      <div class="card " style="width: 18rem;">
-        <img src="{% static 'app/img/10.jpg' %}" style="height: 13rem;" class="card-img-top" alt="...">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'app/img/natacion.jpg' %}" style="height: 13rem;" class="card-img-top" alt="...">
 
-        <div class="card-body">
-          <h5 class="card-title">Taller de ajedrez</h5>
-          <p class="card-text">Inscribete en este espectacular taller diseñado para ti.</p>
-          <a href="{% url 'detalleT' %}" class="btn btn-primary">Ver Más</a>
+        <div class="card-body bg-fondocarta">
+          <h5 class="card-title">Taller de Natación</h5>
+          <p class="card-text">Inscribete en este espectacular taller de natación.</p>
+          <a href="{% url 'detalleT' %}" class="btn btn-success">Ver Más</a>
         </div>
       </div>
     </div>
     <div class=" col-md-4 mx-10 my-3 d-flex justify-content-center">
       <div class="card " aria-hidden="true" style="width: 18rem;">
         <img src="{% static 'app/img/11.jpg' %}" style="height: 13rem;" class="card-img-top" alt="...">
-        <div class="card-body">
+        <div class="card-body bg-fondocarta">
           <h5 class="card-title">Taller de baile</h5>
           <p class="card-text">Inscribete y da lo mejor de ti.</p>
-          <a href="{% url 'detalleT' %}" class="btn btn-primary">Ver Más</a>
+          <a href="{% url 'detalleT' %}" class="btn btn-success">Ver Más</a>
         </div>
       </div>
     </div>
     <div class=" col-md-4 mx-10 my-3 d-flex justify-content-center">
       <div class="card " aria-hidden="true" style="width: 18rem;">
         <img src="{% static 'app/img/122.jpg' %}" style="height: 13rem;" class="card-img-top" alt="...">
-        <div class="card-body">
+        <div class="card-body bg-fondocarta">
           <h5 class="card-title">Taller de pintura</h5>
           <p class="card-text">Te esperamos.</p>
-          <a href="{% url 'detalleT' %}" class="btn btn-primary">Ver Más</a>
+          <a href="{% url 'detalleT' %}" class="btn btn-success">Ver Más</a>
         </div>
       </div>
     </div>
