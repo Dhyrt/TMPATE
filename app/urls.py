@@ -12,4 +12,6 @@ urlpatterns = [
     path('detallePost/', detallePost, name="detallePost"),
     path('inscripcion/', inscripcion, name="inscripcion"),
     path('registroT/', registroT, name="registroT"),
+    path('listarAM/', listarAM, name="listarAM"),
+    path('eliminarAdultoM/<rut>', eliminarAdultoM, name="eliminarAdultoM"),
 ]

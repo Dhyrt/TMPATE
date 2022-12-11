@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import *
 
 # Create your views here.
 
@@ -31,3 +32,11 @@ def inscripcion(request):
 
 def registroT(request):
     return render(request, 'app/registroT.html')
+
+def listarAM(request):
+    return render(request, 'app/listarAM.html')
+
+def eliminarAdultoM(request, rut):
+    producto = AdultoMayor.objects.get(rut=rut)
+    producto.delete()
+    return redirect(to="listarAM")
