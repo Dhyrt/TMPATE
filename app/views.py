@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect
-from .models import *
-=======
-from django.shortcuts import render
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required,permission_required
 from .forms import *
->>>>>>> aed836b1451006cf314142a75563a10676223d1a
+from .models import *
 
 # Create your views here.
 
@@ -53,7 +49,6 @@ def inscripcion(request):
 def registroT(request):
     return render(request, 'app/registroT.html')
 
-<<<<<<< HEAD
 def listarAM(request):
     return render(request, 'app/listarAM.html')
 
@@ -61,5 +56,3 @@ def eliminarAdultoM(request, rut):
     producto = AdultoMayor.objects.get(rut=rut)
     producto.delete()
     return redirect(to="listarAM")
-=======
->>>>>>> aed836b1451006cf314142a75563a10676223d1a
