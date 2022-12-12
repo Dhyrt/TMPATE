@@ -6,21 +6,22 @@ Taller
 {% endblock %}
 
 {% block contenido %}
+{% for t in curso %}
 <div class=" container-fluid banner">
     <div class="banner-img"></div>
     <div class="container-fluid">
         <div class="row d-flex flex-wrap justify-content-start">
             <div class="col-md-2 divIns">
-                <img src="{% static 'app/img/instructor.jpg' %}" class="imgInst">
+                <img src="{{ t.instructor.img.url }}" class="imgInst">
             </div>
             <div class="col-md-10">
                 <div class="container-fluid mt-4">
                     <div class="mb-3 infoT">
-                     <h2>Taller de Manualidades</h2>   
+                     <h2>{{ t.nombre_curso }}</h2>   
                     </div>
                     <div class="row d-flex">
                         <div class="col-md-6 infoT">
-                            <h4>Paulino Rodrigues</h4>
+                            <h4>{{ t.instructor.usuario.first_name }} {{ t.instructor.usuario.last_name }}</h4>
                         </div>
                         <div class="col-md-6 d-flex justify-content-center calT">
                             <img src="{% static 'app/img/estrella.png' %}" alt="" style="width: 25px; height: 25px;">
@@ -31,12 +32,10 @@ Taller
                         <div class="row d-flex respText">
                             <div class="col-md-1"></div>
                             <div class="col-md-11">
-                            <p>Taller práctico donde se enseña la técnica del mosaico: corte de teselas, fraguado y diseño, sobre objetos cotidianos del hogar.</p>
-                            <p>Artes aplicadas: Craquelado, pintura con textura, Patchwork, Decoupage, entre otros.</p>
-                            <p>Técnica de escultura, utilizando la arcilla, el yeso como material artístico y de soporte.</p>
+                            <p>{{ t.descripcion }}</p>
                             <div class="row d-flex">
                                 <div class="col-md-6">
-                                    <p>Cupos disponibles: 45</p>
+                                    <p>Cupos disponibles: {{ t.capacidad_max }}</p>
                                     <p>Valor a pagar: $0</p>
                                 </div>
                                 <div class="col-md-6">
@@ -59,11 +58,11 @@ Taller
                 <a href="{% url 'inscripcion' %}" class="btn btn-primary respButton">Inscribirse</a>   
             </div>
            <div class="col-md-3">
-                <a href="#" class="btn btn-warning respButton">Calificar</a> 
+                <a href="{% url 'calificar' %}" class="btn btn-warning respButton">Calificar</a> 
            </div>
         </div>
         
     </div>
 </div>
-
+{% endfor %}
 {% endblock %}

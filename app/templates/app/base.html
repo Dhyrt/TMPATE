@@ -33,13 +33,19 @@
             <div class="row d-flex flex-wrap p-2">
                <ul class="nav col-md-6">
                     <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
+                    {% if user.tipo_usuario == 'Adulto mayor' %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'talleres' %}">Talleres</a></li>
+                    {% elif user.tipo_usuario == 'Instructor' %}
+                    <li class="nav-item"><a class="nav-link" href="#">Cursos</a></li>
+                    {% elif user.tipo_usuario == 'Administrador' %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'evaluar' %}">Postulaciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'listarAM' %}">Adultos mayores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registrar usuario</a></li>
+                    {% endif %}
                     {% if user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">cerrar sesion</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">@{{ user.username }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Cerrar sesion</a></li>
                     {% else %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Inicio sesión</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registrate</a></li>
                     {% endif %}
                 </ul>
                 <div class="col-md-6 input-group w-50">

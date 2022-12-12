@@ -4,27 +4,27 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required,permission_required
 from .forms import *
 from .models import *
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'app/index.html')
-
-def login(request):
-    return render(request, 'registration/login.html')
+    cursos = Curso.objects.all()
+    datos = {
+        'listaTalleres' : cursos
+    }
+    return render(request, 'app/index.html', datos)
 
 def registro(request):
-    datos ={
+    datos = {
         'form': CustomUserCreationForm()
     }
     if request.method == 'POST':
         formulario = CustomUserCreationForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            user= authenticate(username=formulario.cleaned_data["username"],password=formulario.cleaned_data["password1"])
-            login(request,user)
-            messages.success(request, "Te has registrado correctamente")
-            return redirect(to="index")
+            messages.success(request, "Usuario registrado con exito")
         datos["form"] = formulario
     return render(request, 'registration/registro.html', datos)
 
@@ -32,10 +32,18 @@ def postular(request):
     return render(request, 'app/postular.html')
 
 def talleres(request):
-    return render(request, 'app/talleres.html')
+    cursos = Curso.objects.all()
+    datos = {
+        'listaTalleres' : cursos
+    }
+    return render(request, 'app/talleres.html', datos)
 
-def detalleT(request):
-    return render(request, 'app/detalleT.html')
+def detalleT(request, id_curso):
+    curso = Curso.objects.filter(id_curso=id_curso)
+    datos = {
+        'curso' : curso
+    }
+    return render(request, 'app/detalleT.html', datos)
 
 def evaluar(request):
     return render(request, 'app/evaluar.html')
@@ -50,9 +58,33 @@ def registroT(request):
     return render(request, 'app/registroT.html')
 
 def listarAM(request):
-    return render(request, 'app/listarAM.html')
+    if 'busq' in request.GET:
+        busq = request.GET['busq']
+        usuarios = User.objects.filter(rut_usuario__icontains=busq)
+    else:
+        usuarios = User.objects.all()
+    datos = {
+        'listaUsuarios' : usuarios
+    }
+    return render(request, 'app/listarAM.html', datos)
 
-def eliminarAdultoM(request, rut):
-    producto = AdultoMayor.objects.get(rut=rut)
-    producto.delete()
+def modificar(request, username):
+    usuarios = User.objects.get(username=username)
+    datos = {
+        'form' : CustomUserCreationForm(instance=usuarios)
+    }
+    if request.method == 'POST':
+        formulario = CustomUserCreationForm(data=request.POST, instance=usuarios)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request,'Usuario modificado correctamente')
+            datos['form'] = formulario
+    return render(request, 'app/modificar.html', datos)
+
+def eliminarAdultoM(request, username):
+    usuarios = User.objects.get(username=username)
+    usuarios.delete()
     return redirect(to="listarAM")
+
+def calificar(request):
+    return render(request, 'app/calificar.html')

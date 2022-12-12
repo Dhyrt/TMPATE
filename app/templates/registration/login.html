@@ -32,7 +32,7 @@ Iniciar sesión
                             {% csrf_token %}
                             {{ form | crispy }}
                             <div class="mt-3">
-                                <a href="{% url 'index' %}" class="btn btn-success mt-3 ">Iniciar Sesión</a>
+                                <input type="submit" value="Ingresar" class="btn btn-success mt-3 ">
                             </div>
                             <div class="my-3">
                                 <span><a href="#">Recuperar mi contraseña</a></span>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class TipoPefil(models.Model):
@@ -10,33 +11,6 @@ class TipoPefil(models.Model):
     
     class Meta:
         db_table = 'db_tipoUsuario'
-
-class Genero(models.Model):
-    id_genero = models.IntegerField(primary_key=True)
-    genero = models.CharField(max_length=20)
-
-    def __str__(self):
-        return self.genero
-
-    class Meta:
-        db_table = 'db_genero'
-
-class Usuario(models.Model):
-    rut = models.CharField(primary_key=True, max_length=20)
-    p_nombre = models.CharField(max_length=20)
-    s_nombre = models.CharField(max_length=20)
-    p_apellido = models.CharField(max_length=20)
-    s_apellido = models.CharField(max_length=20)
-    nombre_usuario = models.CharField(max_length=30)
-    contrasena = models.CharField(max_length=20)
-    TipoUsuario = models.ForeignKey(TipoPefil, on_delete=models.CASCADE)
-    Genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.rut
-
-    class Meta:
-        db_table = 'db_usuario'
 
 class Credencial(models.Model):
     id_credencial = models.IntegerField(primary_key=True)
@@ -53,7 +27,7 @@ class Autentificacion(models.Model):
     id_autentificacion = models.IntegerField(primary_key=True)
     nombre_usuario = models.CharField(max_length=30)
     contrasena = models.CharField(max_length=20)
-    rut_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    rut_usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     id_credencial = models.ForeignKey(Credencial, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -64,7 +38,7 @@ class Autentificacion(models.Model):
 
 class Discapacidad(models.Model):
     id_discapacidad = models.IntegerField(primary_key=True)
-    discapacidad = models.CharField(max_length=20)
+    discapacidad = models.CharField(max_length=90)
 
     def __str__(self):
         return self.discapacidad
@@ -74,8 +48,7 @@ class Discapacidad(models.Model):
 
 class AdultoMayor(models.Model):
     id_adultoMayor = models.IntegerField(primary_key=True)
-    discapacidad = models.BooleanField()
-    rut_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     tipo_discapacidad = models.ForeignKey(Discapacidad, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -87,7 +60,8 @@ class AdultoMayor(models.Model):
 class Instructor(models.Model):
     id_instructor = models.IntegerField(primary_key=True)
     sueldo = models.IntegerField()
-    rut_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    img = models.ImageField(null=True, upload_to="instructores")
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.id_instructor)
@@ -97,7 +71,7 @@ class Instructor(models.Model):
 
 class Administrador(models.Model):
     id_administrador = models.IntegerField(primary_key=True)
-    rut_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.id_administrador)
@@ -115,25 +89,26 @@ class Taller(models.Model):
     class Meta:
         db_table = 'db_taller'
 
-class Salas:
+class Sala(models.Model):
     id_sala = models.CharField(primary_key=True, max_length=10)
     tamano = models.IntegerField()
     capacidad_max = models.IntegerField()
 
     def __str__(self):
-        return self.id_sala
+        return str(self.id_sala)
 
     class Meta:
         db_table = 'db_salas'
 
 class Curso(models.Model):
     id_curso = models.IntegerField(primary_key=True)
+    nombre_curso = models.CharField(max_length=90, null=True)
     fecha_inicio = models.DateField()
     fecha_termino = models.DateField()
     descripcion = models.TextField(max_length=500)
     capacidad_max = models.IntegerField()
-    imagen = models.ImageField()
-    sala = models.ForeignKey(Salas, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to="cursos")
+    sala = models.ForeignKey(Sala, on_delete=models.CASCADE)
     taller = models.ForeignKey(Taller, on_delete=models.CASCADE)
     instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 
@@ -161,7 +136,7 @@ class Estado(models.Model):
 
 class Postulacion(models.Model):
     id_postulacion = models.IntegerField(primary_key=True)
-    genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
+    genero = models.CharField(max_length=20)
     correo = models.CharField(max_length=20)
     numero = models.IntegerField()
     documentos = models.FileField()

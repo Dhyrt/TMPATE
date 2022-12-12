@@ -1,0 +1,24 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block nombre %}
+Calificar
+{% endblock %}
+
+{% block contenido %}
+<div class="container">
+    <form class="row g-3">
+        <div class="col-md-6">
+          <img src="{% static 'app/img/rating.png' %}" style="width: 400px;">
+        </div>
+        <div class="col-12">
+            <label for="inputDescripcion" class="form-label">Comentarios</label>
+            <textarea rows="4" cols="5" class="form-control" id="inputDescripcion"></textarea>
+        </div>
+        <div class="col-12">
+            <a href="{% url 'index' %}" class="btn btn-success">Calificar</a>
+          </div>
+      </form>
+</div>
+
+{% endblock %}

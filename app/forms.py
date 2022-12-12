@@ -11,4 +11,4 @@ from .models import *
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ['username','first_name','last_name','email','password1','password2']
+        fields = [ 'rut_usuario','username','first_name','s_nombre', 'last_name', 's_apellido','genero','email','tipo_usuario','password1','password2']

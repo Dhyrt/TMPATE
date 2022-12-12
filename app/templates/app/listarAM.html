@@ -6,4 +6,41 @@ Adultos Mayores
 {% endblock %}
 
 {% block contenido %}
+<div class="container">
+    <div class="mt-4">
+        <div>
+            <h5>Buscar Adulto Mayor</h5>
+        </div>
+        <form class="mt-2" method="get">
+            <div class="input-group w-25">
+                <input type="search" name="busq" id="busq" class="form-control text-center" placeholder="Rut Adulto Mayor">
+                <button type="submit" class="btn"><img src="{% static 'app/img/buscar.png'%}" width="30px"></button>
+            </div>
+        </form>
+    </div>
+    <div class="mt-2">
+        <table class="table table-condensed table-striped">
+            <thead>
+                <th>Rut</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </thead>
+            <tbody>
+            {% for u in listaUsuarios %}
+               {% if u.tipo_usuario == 'Adulto mayor' %}
+               <tr>
+                <td>{{ u.rut_usuario }}</td>
+                <td>{{ u.first_name }}</td>
+                <td>{{ u.last_name }}</td>
+                <td class="text-center">
+                    <a href="{% url 'modificar' u.username %}" class="btn btn-success" style="cursor: pointer;">Modificar</a> 
+                    <a href="{% url 'eliminarAdultoM' u.username %}" class="btn btn-danger" style="cursor: pointer;">Eliminar</a> 
+                </td>
+            </tr>
+               {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 {% endblock %}
