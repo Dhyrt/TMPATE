@@ -150,7 +150,7 @@ class Postulacion(models.Model):
 
 class Inscripcion(models.Model):
     id_inscripcion = models.IntegerField(primary_key=True)
-    fecha_inscripcion = models.DateField()
+    fecha_inscripcion = models.DateField(auto_now_add=True)
     hora_inscripcion = models.TimeField(auto_now_add=True)
     adulto_mayor = models.ForeignKey(AdultoMayor, on_delete=models.CASCADE)
 
